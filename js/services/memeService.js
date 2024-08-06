@@ -1,33 +1,18 @@
 'use strict'
 
 const MEME_STORAGE_KEY = 'memes'
-const IMAGES_STORAGE_KEY = 'images'
 
-var gImgs = []
-var gMeme
-
-createImages()
-
-function createImages() {
-  gImgs = loadFromStorage(IMAGES_STORAGE_KEY) || []
-  if (gImgs && gImgs.length > 0) return
-
-  const imgs = [
-    { id: 1, url: 'img/1.jpg', keywords: ['funny', 'trump'] },
-    { id: 2, url: 'img/2.jpg', keywords: ['love', 'dogs'] },
-    { id: 3, url: 'img/3.jpg', keywords: ['cute', 'babies'] },
-    { id: 4, url: 'img/4.jpg', keywords: ['sleepy', 'cat'] },
-    { id: 5, url: 'img/5.jpg', keywords: ['funny', 'baby'] },
-    { id: 6, url: 'img/6.jpg', keywords: ['interesting', 'long hair man'] },
-    { id: 7, url: 'img/7.jpg', keywords: ['funny', 'baby'] },
-    { id: 8, url: 'img/8.jpg', keywords: ['dreamy', 'man with hat'] },
-    { id: 9, url: 'img/9.jpg', keywords: ['funny', 'kid'] },
-  ]
-
-  gImgs = imgs
-
-  _imagesStorageSaving()
-}
+var gImgs = [
+  { id: 1, url: 'img/1.jpg', keywords: ['funny', 'trump'] },
+  { id: 2, url: 'img/2.jpg', keywords: ['love', 'dogs'] },
+  { id: 3, url: 'img/3.jpg', keywords: ['cute', 'babies'] },
+  { id: 4, url: 'img/4.jpg', keywords: ['sleepy', 'cat'] },
+  { id: 5, url: 'img/5.jpg', keywords: ['funny', 'baby'] },
+  { id: 6, url: 'img/6.jpg', keywords: ['interesting', 'long hair man'] },
+  { id: 7, url: 'img/7.jpg', keywords: ['funny', 'baby'] },
+  { id: 8, url: 'img/8.jpg', keywords: ['dreamy', 'man with hat'] },
+  { id: 9, url: 'img/9.jpg', keywords: ['funny', 'kid'] },
+]
 
 var gMeme = {
   selectedImgId: 1,
@@ -86,12 +71,14 @@ function moveLine(dx, dy) {
 
 function setImg(imgId) {
   gMeme.selectedImgId = imgId
+
+  _memeStorageSaving()
 }
 
 function setLineTxt(txt) {
   gMeme.lines[gMeme.selectedLineIdx].txt = txt
 
-  // _memeStorageSaving()
+  _memeStorageSaving()
 }
 
 function addLine() {
@@ -129,8 +116,6 @@ function switchLines() {
   // }
   let linesLength = gMeme.lines.length
   gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % linesLength
-
-  _memeStorageSaving()
 }
 
 function setLineColor(color) {
@@ -157,10 +142,6 @@ function getImgById(id) {
 
 function _memeStorageSaving() {
   saveToStorage(MEME_STORAGE_KEY, gMeme)
-}
-
-function _imagesStorageSaving() {
-  saveToStorage(IMAGES_STORAGE_KEY, gImgs)
 }
 
 // -------------------------TRASHCAN-----------------------------
