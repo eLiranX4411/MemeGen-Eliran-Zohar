@@ -68,7 +68,7 @@
 
   .logo-bar-container {
     background-color: var(--clr-primary3);
-    font-family: 'KeepCheese', sans-serif;
+    font-family: keepcheese, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -115,7 +115,7 @@
     padding: 1em;
     min-height: 100px;
 
-    font-family: 'ComicTans', serif;
+    font-family: comictans, serif;
     font-size: 1.2em;
   }
 
@@ -222,7 +222,7 @@
     justify-content: center;
     align-items: center;
 
-    font-family: 'KeepCheese', sans-serif;
+    font-family: keepcheese, sans-serif;
     font-size: 1.5em;
 
     background-color: var(--clr-primary3);
@@ -257,7 +257,7 @@
   .keywords-bar-container {
     background-color: var(--clr-primary2);
     min-height: 100px;
-    font-family: 'ComicTans', serif;
+    font-family: comictans, serif;
     font-size: 1.2em;
     display: flex;
     justify-content: space-between;
@@ -289,7 +289,7 @@
 
   .logo-bar-container {
     background-color: var(--clr-primary3);
-    font-family: 'KeepCheese', sans-serif;
+    font-family: keepcheese, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -313,7 +313,7 @@
   .keywords-bar-container {
     background-color: var(--clr-primary2);
     min-height: 100px;
-    font-family: 'ComicTans', serif;
+    font-family: comictans, serif;
 
     font-size: 1.2em;
     display: flex;
@@ -417,7 +417,7 @@
     justify-content: center;
     align-items: center;
 
-    font-family: 'KeepCheese', sans-serif;
+    font-family: keepcheese, sans-serif;
     font-size: 1.5em;
 
     background-color: var(--clr-primary3);
