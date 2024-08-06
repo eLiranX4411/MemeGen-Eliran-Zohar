@@ -1,0 +1,439 @@
+/* ---------------------------------------Mobile------------------------------------- */
+
+@media (max-width: 880px) {
+  .hamburger-menu {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-inline-end: 1em;
+    z-index: 1001;
+  }
+
+  .links-container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 40%;
+
+    background-color: var(--clr-primary3);
+    border-radius: 0 0 4em 4em;
+    z-index: 1000;
+
+    padding: 1em;
+  }
+
+  .links-container.active {
+    display: flex;
+  }
+
+  .links-container li {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1em 0;
+  }
+
+  .logo-bar-container .links-container .seperator {
+    border: 5px solid var(--clr-primary2);
+    border-radius: 1em;
+    width: 80%;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+
+  .imgs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-block: 2em;
+  }
+
+  .logo-bar-container {
+    background-color: var(--clr-primary3);
+    font-family: 'KeepCheese', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 80px;
+
+    box-shadow: inset 0 -2px 0 var(--clr-black);
+  }
+
+  .logo-bar-container .logo {
+    font-size: 1.5rem;
+  }
+
+  /* Gallery Section */
+
+  .about-container {
+    display: grid;
+    padding: 3em;
+    column-gap: 3em;
+    grid-template-columns: 1fr;
+    background-color: var(--clr-primary2);
+  }
+
+  .about-links-container {
+    display: flex;
+    gap: 1em;
+    padding: 0.5em;
+    justify-content: center;
+
+    font-size: 1.5rem;
+  }
+
+  #keywordSearch {
+    font-size: 1.3rem;
+  }
+
+  .keywords-bar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--clr-primary2);
+    padding: 1em;
+    min-height: 100px;
+
+    font-family: 'ComicTans', serif;
+    font-size: 1.2em;
+  }
+
+  .kids-img {
+    margin-block-end: 1.5em;
+  }
+
+  h2.kids-title {
+    font-size: 1.7rem;
+  }
+
+  h3.kids-title {
+    font-size: 1.4rem;
+  }
+
+  .kids-txt {
+    font-size: 1.2rem;
+    margin-block-end: 0.5em;
+    padding: 0.5em;
+  }
+
+  /* Editor Section */
+
+  .main-editor-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1em;
+  }
+
+  .crudl-canvas-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--clr-primary2);
+
+    row-gap: 0.7em;
+    border: 3px solid var(--clr-primary3);
+    border-radius: 1em;
+
+    padding: 1em;
+    /* margin-block-end: 2em; */
+    margin: 2em;
+  }
+
+  #canvasText {
+    border: 2px solid black;
+    font-size: 1.2rem;
+  }
+
+  #colorPicker {
+    border: 2px solid black;
+  }
+
+  .fonts-options {
+    border: 2px solid black;
+    font-size: 1.2rem;
+  }
+
+  .crudl-canvas-container > h3,
+  .crudl-canvas-container > h2 {
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  .crudl-canvas-container > * {
+    grid-column: 1 / -1;
+  }
+
+  .crudl-canvas-container #canvasText {
+    width: 100%;
+  }
+
+  .crudl-canvas-container #canvasText::placeholder {
+    text-align: center;
+  }
+
+  .crudl-canvas-container #colorPicker {
+    width: 100%;
+    height: 3em;
+  }
+
+  .crudl-canvas-container .fonts-options {
+    text-align: center;
+  }
+
+  .canvas-container {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+
+    border: 4px solid var(--clr-primary2);
+    border-radius: 1em;
+  }
+
+  .canvas-board {
+    height: 400px;
+    width: 400px;
+  }
+
+  .main-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'KeepCheese', sans-serif;
+    font-size: 1.5em;
+
+    background-color: var(--clr-primary3);
+    height: 135px;
+
+    box-shadow: inset 0 2px 0 var(--clr-black);
+  }
+}
+
+/* ---------------------------------------Small------------------------------------- */
+
+@media (min-width: 640px) {
+  .gallery-container {
+    grid-template-columns: minmax(40px, 1fr) minmax(auto, 600px) minmax(40px, 1fr);
+  }
+  .editor-container {
+    grid-template-columns: minmax(20px, 1fr) minmax(auto, 600px) minmax(20px, 1fr);
+  }
+
+  /* Gallery Section */
+
+  .imgs-container {
+    display: grid;
+    column-gap: 1em;
+    row-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    margin-block: 2em;
+  }
+
+  .keywords-bar-container {
+    background-color: var(--clr-primary2);
+    min-height: 100px;
+    font-family: 'ComicTans', serif;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Editor Section */
+}
+
+/* ---------------------------------------Medium------------------------------------- */
+
+@media (min-width: 880px) {
+  .gallery-container {
+    grid-template-columns: minmax(60px, 1fr) minmax(auto, 800px) minmax(60px, 1fr);
+    row-gap: 0;
+  }
+  .editor-container {
+    grid-template-columns: minmax(40px, 1fr) minmax(auto, 800px) minmax(40px, 1fr);
+    height: 100vh;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  #keywordSearch {
+    font-size: 1.1rem;
+  }
+
+  .logo-bar-container {
+    background-color: var(--clr-primary3);
+    font-family: 'KeepCheese', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+    font-size: 1.5rem;
+
+    box-shadow: inset 0 -2px 0 var(--clr-black);
+  }
+
+  .logo-bar-container .links-container {
+    display: flex;
+    gap: 1em;
+    margin-inline-end: 1.5em;
+  }
+
+  .logo-bar-container .links-container .seperator {
+    border-inline-start: 2px solid black;
+  }
+
+  .keywords-bar-container {
+    background-color: var(--clr-primary2);
+    min-height: 100px;
+    font-family: 'ComicTans', serif;
+
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Gallery Section */
+
+  .imgs-container {
+    display: grid;
+    column-gap: 1em;
+    row-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    margin-block: 2em;
+  }
+
+  .about-container {
+    display: grid;
+    padding: 3em;
+    column-gap: 3em;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--clr-primary2);
+
+    font-size: 1.5rem;
+  }
+
+  h2.kids-title {
+    font-size: 2.3rem;
+  }
+
+  h3.kids-title {
+    font-size: 1.8rem;
+  }
+
+  .kids-txt {
+    font-size: 1.2rem;
+  }
+
+  /* Editor Section */
+
+  .main-editor-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .canvas-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .canvas-board {
+    height: 650px;
+    width: 650px;
+    border: 4px solid var(--clr-primary2);
+    border-radius: 1em;
+  }
+
+  .editor-options {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .crudl-canvas-container {
+    display: grid;
+    font-size: 1.1rem;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+
+    margin-inline-start: 2em;
+    background-color: var(--clr-primary2);
+    padding: 1.4em;
+    border-radius: 1em;
+    border: 3px solid var(--clr-primary3);
+
+    gap: 0.5em;
+  }
+
+  .crudl-canvas-container input {
+    width: 100%;
+    height: 3.5em;
+    text-align: center;
+  }
+
+  .crudl-canvas-container > h3,
+  h2 {
+    text-decoration: underline;
+  }
+
+  .crudl-canvas-container > * {
+    text-align: center;
+  }
+
+  .main-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'KeepCheese', sans-serif;
+    font-size: 1.5em;
+
+    background-color: var(--clr-primary3);
+    height: 210px;
+
+    box-shadow: inset 0 2px 0 var(--clr-black);
+  }
+}
+
+/* ---------------------------------------Large------------------------------------- */
+
+@media (min-width: 1080px) {
+  .gallery-container {
+    grid-template-columns: minmax(100px, 1fr) minmax(auto, 1000px) minmax(100px, 1fr);
+  }
+  .editor-container {
+    grid-template-columns: minmax(40px, 1fr) minmax(auto, 1000px) minmax(40px, 1fr);
+  }
+}

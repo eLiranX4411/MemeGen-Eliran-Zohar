@@ -1,0 +1,21 @@
+.logo-bar-container .logo {
+  font-size: 2rem;
+  margin-inline-start: 1.5em;
+}
+
+.keywords-bar-container #keywordSearch {
+  margin-inline-start: 1.5em;
+  background-color: var(--clr-primary2);
+  border: none;
+  box-shadow: inset 0 -2px 0 var(--clr-black);
+}
+
+.keywords-bar-container #keywordSearch:focus {
+  outline-width: 0;
+}
+
+.keywords-bar-container .keywords-container {
+  display: flex;
+  gap: 1.5em;
+  margin-inline-end: 1.5em;
+}

@@ -1,0 +1,13 @@
+/* Editor Layout */
+
+.editor-container {
+  grid-template-columns: 1fr 1fr;
+}
+
+.editor-container > *:not(.full) {
+  grid-column: 2;
+}
+
+.editor-container > .full {
+  grid-column: 1 / -1;
+}

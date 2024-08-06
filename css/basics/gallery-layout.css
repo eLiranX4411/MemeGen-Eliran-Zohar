@@ -1,0 +1,13 @@
+/* Gallery Layout */
+
+.gallery-container {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gallery-container > *:not(.full) {
+  grid-column: 2;
+}
+
+.gallery-container > .full {
+  grid-column: 1 / -1;
+}

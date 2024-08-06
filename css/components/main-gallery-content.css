@@ -1,0 +1,38 @@
+.imgs-container > img {
+  cursor: pointer;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-container .kids-img {
+  grid-column: 1;
+  border: 5px solid var(--clr-primary3);
+  border-radius: 5em 0 5em;
+
+  justify-self: center;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.kids-title {
+  font-family: 'HeyComic', sans-serif;
+}
+
+.about-links-container {
+  display: flex;
+  padding: 0;
+  gap: 1em;
+}
+
+.about-container .kids-title,
+.kids-txt {
+  grid-column: 2;
+}

@@ -1,0 +1,47 @@
+#canvasText {
+  border-radius: 0.5em;
+  border: none;
+  padding: 0.8em;
+  margin-block-end: 1em;
+}
+
+#canvasText:focus {
+  outline-width: 0;
+}
+
+.crudl {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-block-end: 1em;
+}
+
+.fonts-crudl {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-block-end: 1em;
+}
+
+.fonts-options {
+  border-radius: 0.5em;
+  border: none;
+  padding: 0.5em;
+
+  margin-block-end: 1em;
+}
+
+.stickers-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-container {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+}

@@ -1,0 +1,14 @@
+@font-face {
+  font-family: HeyComic;
+  src: url(/fonts/Hey_Comic/Hey_Comic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: KeepCheese;
+  src: url(/fonts/Keep_Cheese/Keep_Cheese.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: ComicTans;
+  src: url(/fonts/ComicTans/ComicTans.ttf) format('truetype');
+}

@@ -1,0 +1,17 @@
+:root {
+  /* Color Palette */
+  --clr-primary: #b4d6cd;
+  --clr-primary2: #ffda76;
+  --clr-primary3: #ff8c9e;
+  --clr-primary4: #ff4e88;
+
+  /* Default Colors */
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+
+  /* Hover Colors */
+  --clr-primary-hover: #779c92;
+  --clr-primary2-hover: #cba640;
+  --clr-primary3-hover: #c45666;
+  --clr-primary4-hover: #ce4271;
+}
