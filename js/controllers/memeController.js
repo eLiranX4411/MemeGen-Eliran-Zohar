@@ -149,6 +149,11 @@ function onDecreaseFontSize() {
   renderMeme()
 }
 
+function onClearCanvas() {
+  clearLines()
+  renderMeme()
+}
+
 function downloadImg(elLink) {
   const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
   elLink.href = imgContent

@@ -12,13 +12,13 @@
         <div class="logo" onclick="onInit()"><a href="#">Memegen For Kids</a></div>
         <div class="hamburger-menu">☰</div>
         <ul class="links-container">
-          <li class="gallery"><a href="#">Gallery</a></li>
+          <li class="gallery" onclick="onInit()"><a href="#">Gallery</a></li>
           <li class="seperator"></li>
-          <li class="about"><a href="#">About</a></li>
+          <li class="about" onclick="showAboutScreen()"><a href="#">About</a></li>
         </ul>
       </nav>
 
-      <nav class="keywords-bar-container">
+      <nav class="keywords-bar-container" id="keybar">
         <label for="keywordSearch"><input type="text" placeholder="Enter search keyword" id="keywordSearch" name="keywordSearch" /> 🔍</label>
         <ul class="keywords-container">
           <li><a href="#">Funny</a></li>
@@ -78,26 +78,29 @@
             <label for="colorPicker"><input type="color" id="colorPicker" oninput="onChangeColorTxt(this.value)" /></label>
             <h3>Edit Tools</h3>
             <div class="crudl">
-              <button class="add-line" onclick="onAddLine()">+</button>
-              <button class="switch-lines" onclick="onSwitchLine()">^</button>
-              <button class="remove-line" onclick="onRemoveLine()">X</button>
+              <button class="add-line" onclick="onAddLine()"><img src="icons/add.png" /></button>
+              <button class="switch-lines" onclick="onSwitchLine()"><img src="icons/up-and-down-opposite-double-arrows-side-by-side.png" alt="" /></button>
+              <button class="remove-line" onclick="onRemoveLine()"><img src="icons/trash.png" alt="" /></button>
             </div>
             <div class="fonts-crudl">
-              <button class="increase-font-size" onclick="onIncreaseFontSize()">A+-</button>
-              <button class="decrease-font-size" onclick="onDecreaseFontSize()">A-</button>
-              <button class="remove-element">A</button>
+              <button class="increase-font-size" onclick="onIncreaseFontSize()"><img src="icons/increase font - icon.png" alt="" /></button>
+              <button class="decrease-font-size" onclick="onDecreaseFontSize()"><img src="icons/decrease font - icon.png" alt="" /></button>
+              <button class="remove-element" onclick=""><img src="icons/text stroke.png" alt="" /></button>
             </div>
             <h3>Choose a font</h3>
             <select class="fonts-options" name="fonts-options" onchange="">
-              <option value="fontname">fontname</option>
-              <option value="fontname">fontname</option>
-              <option value="fontname">fontname</option>
+              <option value="">Choose a Font</option>
+              <option value="heycomic">Hey Comic</option>
+              <option value="comictans">ComicTans</option>
+              <option value="keepcheese">Keep Cheese</option>
             </select>
             <h3>Choose awesome stickers 💥</h3>
             <div class="stickers-container">
-              <div class="sticker1">😂</div>
-              <div class="sticker2">🙃</div>
-              <div class="sticker3">😇</div>
+              <button class="sticker1">😂</button>
+              <button class="sticker2">🙃</button>
+              <button class="sticker3">😇</button>
+              <button class="sticker3">🥰</button>
+              <button class="sticker3">🤑</button>
             </div>
             <h3>Don't forget to save & share</h3>
             <ul class="share-container">
@@ -108,6 +111,38 @@
           </section>
         </div>
       </main>
+    </section>
+
+    <section class="about-main-container">
+      <div class="about-container full">
+        <img class="kids-img" src="img/eliran.jpg" alt="" srcset="" />
+        <div class="text-container">
+          <div class="title-container">
+            <h2 class="kids-title">Memegen for kids By Eliran Zohar</h2>
+            <h3 class="kids-title">Discover the Fun of Meme Generation!</h3>
+            <p class="kids-txt">
+              Kids love to play with meme generators online because it combines creativity with humor in a way that's both entertaining and educational. Our
+              meme generator allows children to create their own hilarious memes, sparking their imagination and giving them a platform to express their unique
+              sense of humor.
+            </p>
+            <p class="kids-txt">
+              Creating memes isn't just about getting laughs, it also helps kids develop valuable skills. As they think of funny captions and match them with
+              images, they’re enhancing their creative writing and critical thinking abilities.
+            </p>
+
+            <p class="kids-txt">
+              Moreover, sharing these memes with friends can boost their social skills and confidence. Our meme generator is user-friendly and designed to be
+              safe for all ages, making it the perfect place for kids to explore and enjoy. They can choose from a wide variety of images and add their own
+              captions to create memes that will make everyone laugh. So, why wait? Dive into the world of meme generation and watch your creativity soar!
+            </p>
+          </div>
+          <ul class="about-links-container">
+            <li class=""><a href="#">linkdin icon</a></li>
+            <li class=""><a href="#">fb icon</a></li>
+            <li class=""><a href="#">git icon</a></li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <footer class="main-footer full">&copy; Memegen For Kids - By Eliran Zohar</footer>

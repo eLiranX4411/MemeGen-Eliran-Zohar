@@ -107,6 +107,13 @@ function removeLine() {
   renderMeme()
 }
 
+function clearLines() {
+  let linesLength = gMeme.lines.length
+  gMeme.lines.splice(gMeme.selectedLineIdx, linesLength - 1)
+
+  renderMeme()
+}
+
 function switchLines() {
   // let linesLength = gMeme.lines.length - 1
   // if (gMeme.selectedLineIdx < linesLength) {
@@ -116,6 +123,8 @@ function switchLines() {
   // }
   let linesLength = gMeme.lines.length
   gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % linesLength
+
+  _memeStorageSaving()
 }
 
 function setLineColor(color) {

@@ -62,7 +62,7 @@
   .imgs-container {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 1em;
     margin-block: 2em;
   }
 
@@ -83,6 +83,10 @@
   }
 
   /* Gallery Section */
+
+  .dsp-grid {
+    display: block;
+  }
 
   .about-container {
     display: grid;
@@ -207,9 +211,6 @@
     display: flex;
     justify-content: center;
     padding: 1em;
-
-    border: 4px solid var(--clr-primary2);
-    border-radius: 1em;
   }
 
   .canvas-board {
@@ -277,6 +278,10 @@
   .editor-container {
     grid-template-columns: minmax(40px, 1fr) minmax(auto, 800px) minmax(40px, 1fr);
     height: 100vh;
+  }
+
+  .dsp-grid {
+    display: grid;
   }
 
   .hamburger-menu {
@@ -410,6 +415,52 @@
 
   .crudl-canvas-container > * {
     text-align: center;
+  }
+
+  .crudl button,
+  .fonts-crudl button {
+    height: 30px;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 1em;
+    background-color: var(--clr-primary2);
+  }
+
+  .stickers-container {
+    border: 2px solid black;
+    background-color: var(--clr-primary4);
+    border-radius: 1em;
+  }
+
+  .stickers-container button {
+    border: none;
+    font-size: 1.4rem;
+    background-color: var(--clr-primary4);
+  }
+
+  .share-container {
+    font-family: keepcheese;
+  }
+
+  .save {
+    border: 2px solid black;
+    padding: 0.4em;
+    border-radius: 1em;
+    background-color: var(--clr-primary);
+  }
+
+  .download {
+    border: 2px solid black;
+    padding: 0.4em;
+    border-radius: 1em;
+    background-color: var(--clr-primary3);
+  }
+
+  .share {
+    border: 2px solid black;
+    padding: 0.4em;
+    border-radius: 1em;
+    background-color: var(--clr-primary);
   }
 
   .main-footer {

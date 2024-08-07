@@ -3,6 +3,11 @@
   margin-inline-start: 1.5em;
 }
 
+.gallery,
+.about {
+  cursor: pointer;
+}
+
 .keywords-bar-container #keywordSearch {
   margin-inline-start: 1.5em;
   background-color: var(--clr-primary2);

@@ -6,6 +6,6 @@
   display: none;
 }
 
-.dsp-grid {
-  display: grid;
+.dsp-flex {
+  display: flex;
 }
