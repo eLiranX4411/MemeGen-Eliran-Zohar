@@ -1,5 +1,9 @@
 'use strict'
 
+//TODO:
+// Share facebook, Saved format, Text eliran about, filterby, category
+// Links linkdin git and facebook, More responsivy & missions
+
 var gCtx
 var gElCanvas
 let gStartPos
@@ -22,57 +26,58 @@ function renderMeme() {
   img.onload = () => {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
-    meme.lines.forEach((line, idx) => {
-      gCtx.font = `${line.size}px Arial`
-      gCtx.fillStyle = line.color
-      gCtx.textAlign = 'center'
-
-      gCtx.fillText(line.txt, line.x, line.y)
-
-      // If the line is the selected one, draw a border around it
-      if (idx === meme.selectedLineIdx) {
-        const textMetrics = gCtx.measureText(line.txt)
-        const textHeight = line.size
+    meme.elements.forEach((element, idx) => {
+      if (element.type === 'text') {
+        gCtx.font = `${element.size}px ${element.font}`
+        gCtx.fillStyle = element.color
+        gCtx.textAlign = 'center'
 
         gCtx.strokeStyle = 'black'
-        gCtx.lineWidth = 2
-        gCtx.strokeRect(line.x - textMetrics.width / 2 - 10, line.y - textHeight, textMetrics.width + 20, textHeight + 10)
+        gCtx.lineWidth = element.strokeWidth
+        gCtx.strokeText(element.txt, element.x, element.y)
+
+        gCtx.fillText(element.txt, element.x, element.y)
+
+        if (idx === meme.selectedLineIdx) {
+          const textMetrics = gCtx.measureText(element.txt)
+          const textHeight = element.size
+
+          gCtx.strokeStyle = 'red'
+          gCtx.lineWidth = 3
+          gCtx.strokeRect(element.x - textMetrics.width / 2 - 40, element.y - textHeight, textMetrics.width + 80, textHeight + 30)
+        }
+      } else if (element.type === 'sticker') {
+        gCtx.font = `${element.size}px Arial`
+        gCtx.fillText(element.sticker, element.x, element.y)
       }
     })
   }
 }
 
 function onDown(ev) {
-  //* Get the ev pos from mouse or touch
   const pos = getEvPos(ev)
+  if (!isElementClicked(pos)) return
 
-  if (!isLineClicked(pos)) return
-
-  setLineDrag(true)
-  //* Save the pos we start from
+  setElementDrag(true)
   gStartPos = pos
-  const elCanvas = document.querySelector('.canvas-board')
-  const elLineInput = document.querySelector('#canvasText')
-  elCanvas.style.cursor = 'grabbing'
-  elLineInput.value = ''
+  gElCanvas.style.cursor = 'grabbing'
 }
 
 function onMove(ev) {
-  if (!getMeme().lines[gMeme.selectedLineIdx].isDrag) return
+  if (!getMeme().elements[gMeme.selectedElementIdx].isDrag) return
 
   const pos = getEvPos(ev)
   const dx = pos.x - gStartPos.x
   const dy = pos.y - gStartPos.y
 
-  moveLine(dx, dy)
+  moveElement(dx, dy)
   gStartPos = pos
   renderMeme()
 }
 
 function onUp() {
-  setLineDrag(false)
-  const elCanvas = document.querySelector('.canvas-board')
-  elCanvas.style.cursor = 'grab'
+  setElementDrag(false)
+  gElCanvas.style.cursor = 'grab'
 }
 
 function addListeners() {
@@ -122,6 +127,11 @@ function onAddLine() {
   renderMeme()
 }
 
+function onAddSticker(sticker) {
+  addSticker(sticker)
+  renderMeme()
+}
+
 function onRemoveLine(idx) {
   removeLine(idx)
 }
@@ -146,6 +156,16 @@ function onIncreaseFontSize() {
 
 function onDecreaseFontSize() {
   decreaseFontSize()
+  renderMeme()
+}
+
+function onChangeFont(font) {
+  changeFont(font)
+  renderMeme()
+}
+
+function onAddStroke() {
+  addStroke()
   renderMeme()
 }
 

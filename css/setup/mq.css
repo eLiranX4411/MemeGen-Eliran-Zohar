@@ -141,6 +141,15 @@
     padding: 0.5em;
   }
 
+  .about-main-container .kids-img {
+    min-width: 300px;
+  }
+
+  .about-links-container {
+    height: 150px;
+    width: 150px;
+  }
+
   /* Editor Section */
 
   .main-editor-content {
@@ -314,9 +323,16 @@
     margin-block: 2em;
   }
 
-  .canvas-board {
-    height: 500px;
-    width: 500px;
+  .about-container .kids-img {
+    min-width: 600px;
+  }
+
+  .text-container {
+    min-width: 300px;
+  }
+
+  .about-main-container .kids-img {
+    width: 400px;
   }
 
   .keywords-bar-container {
@@ -330,6 +346,11 @@
   }
 
   /* Editor Section */
+
+  .canvas-board {
+    height: 500px;
+    width: 500px;
+  }
 }
 
 /* ---------------------------------------Medium------------------------------------- */
@@ -343,6 +364,10 @@
     grid-template-columns: minmax(40px, 1fr) minmax(auto, 800px) minmax(40px, 1fr);
     height: 100vh;
   }
+
+  /* .about-main-container .kids-img {
+    min-width: 600px;
+  } */
 
   .dsp-grid {
     display: grid;

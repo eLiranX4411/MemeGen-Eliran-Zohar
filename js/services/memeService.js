@@ -17,18 +17,24 @@ var gImgs = [
 var gMeme = {
   selectedImgId: 1,
   selectedLineIdx: 0,
-  lines: [
+  elements: [
     {
+      type: 'text',
       txt: 'Text Here',
+      font: 'Arial',
       size: 40,
+      strokeWidth: 5,
       color: 'white',
       x: 350,
       y: 50,
       isDrag: false,
     },
     {
+      type: 'text',
       txt: 'Text 2 Here',
+      font: 'Arial',
       size: 40,
+      strokeWidth: 5,
       color: 'white',
       x: 350,
       y: 600,
@@ -47,26 +53,25 @@ function getImgs() {
   return gImgs
 }
 
-function isLineClicked(clickedPos) {
-  return gMeme.lines.some((line, idx) => {
-    const distance = Math.sqrt((line.x - clickedPos.x) ** 2 + (line.y - clickedPos.y) ** 2)
-    if (distance <= line.size) {
-      gMeme.selectedLineIdx = idx
+function isElementClicked(clickedPos) {
+  return gMeme.elements.some((element, idx) => {
+    const distance = Math.sqrt((element.x - clickedPos.x) ** 2 + (element.y - clickedPos.y) ** 2)
+    if (distance <= element.size) {
+      gMeme.selectedElementIdx = idx
       return true
     }
     return false
   })
 }
 
-function setLineDrag(isDrag) {
-  gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
+function setElementDrag(isDrag) {
+  gMeme.elements[gMeme.selectedElementIdx].isDrag = isDrag
 }
 
-//* Move the line in a delta, diff from the pervious pos
-function moveLine(dx, dy) {
-  const line = gMeme.lines[gMeme.selectedLineIdx]
-  line.x += dx
-  line.y += dy
+function moveElement(dx, dy) {
+  const element = gMeme.elements[gMeme.selectedElementIdx]
+  element.x += dx
+  element.y += dy
 }
 
 function setImg(imgId) {
@@ -76,26 +81,42 @@ function setImg(imgId) {
 }
 
 function setLineTxt(txt) {
-  gMeme.lines[gMeme.selectedLineIdx].txt = txt
+  gMeme.elements[gMeme.selectedLineIdx].txt = txt
 
   _memeStorageSaving()
 }
 
 function addLine() {
-  gMeme.lines.push({
+  gMeme.elements.push({
+    type: 'text',
     txt: 'Text Here',
+    font: 'Arial',
     size: 40,
+    strokeWidth: 5,
     color: 'white',
+    x: 350,
+    y: getRandomInt(100, 500),
+    isDrag: false,
+  })
+  _memeStorageSaving()
+}
+
+function addSticker(sticker) {
+  gMeme.elements.push({
+    type: 'sticker',
+    sticker: sticker,
+    size: 40,
     x: 250,
     y: getRandomInt(100, 500),
+    isDrag: false,
   })
 
   _memeStorageSaving()
 }
 
 function removeLine() {
-  let linesLength = gMeme.lines.length
-  gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+  let linesLength = gMeme.elements.length
+  gMeme.elements.splice(gMeme.selectedLineIdx, 1)
 
   if (gMeme.selectedLineIdx >= linesLength) {
     gMeme.selectedLineIdx = linesLength - 1
@@ -108,8 +129,8 @@ function removeLine() {
 }
 
 function clearLines() {
-  let linesLength = gMeme.lines.length
-  gMeme.lines.splice(gMeme.selectedLineIdx, linesLength - 1)
+  let linesLength = gMeme.elements.length
+  gMeme.elements.splice(gMeme.selectedLineIdx, linesLength - 1)
 
   renderMeme()
 }
@@ -121,26 +142,38 @@ function switchLines() {
   // } else {
   //   gMeme.selectedLineIdx--
   // }
-  let linesLength = gMeme.lines.length
+  let linesLength = gMeme.elements.length
   gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % linesLength
 
   _memeStorageSaving()
 }
 
 function setLineColor(color) {
-  gMeme.lines[gMeme.selectedLineIdx].color = color
+  gMeme.elements[gMeme.selectedLineIdx].color = color
 
   _memeStorageSaving()
 }
 
 function increaseFontSize(size = 5) {
-  gMeme.lines[gMeme.selectedLineIdx].size += size
+  gMeme.elements[gMeme.selectedLineIdx].size += size
+
+  _memeStorageSaving()
+}
+
+function changeFont(font) {
+  gMeme.elements[gMeme.selectedLineIdx].font = font
+
+  _memeStorageSaving()
+}
+
+function addStroke(stroke = 2) {
+  gMeme.elements[gMeme.selectedLineIdx].strokeWidth += stroke
 
   _memeStorageSaving()
 }
 
 function decreaseFontSize(size = 5) {
-  gMeme.lines[gMeme.selectedLineIdx].size -= size
+  gMeme.elements[gMeme.selectedLineIdx].size -= size
 
   _memeStorageSaving()
 }

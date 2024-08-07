@@ -16,17 +16,6 @@
   justify-self: center;
 }
 
-/* Eliran Container */
-
-/* .gallery-container,
-.gallery-container.about-container {
-  display: none;
-}
-
-#keybar {
-  display: none;
-} */
-
 .title-container {
   display: flex;
   flex-direction: column;

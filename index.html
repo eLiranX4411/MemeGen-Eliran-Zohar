@@ -92,10 +92,10 @@
             <div class="fonts-crudl">
               <button class="increase-font-size" onclick="onIncreaseFontSize()"><img src="icons/increase font - icon.png" alt="" /></button>
               <button class="decrease-font-size" onclick="onDecreaseFontSize()"><img src="icons/decrease font - icon.png" alt="" /></button>
-              <button class="remove-element" onclick=""><img src="icons/text stroke.png" alt="" /></button>
+              <button class="stroke" onclick="onAddStroke()"><img src="icons/text stroke.png" alt="" /></button>
             </div>
             <h3>Choose a font</h3>
-            <select class="fonts-options" name="fonts-options" onchange="">
+            <select class="fonts-options" name="fonts-options" onchange="onChangeFont(this.value)">
               <option value="">Choose a Font</option>
               <option value="heycomic">Hey Comic</option>
               <option value="comictans">ComicTans</option>
@@ -103,11 +103,11 @@
             </select>
             <h3>Choose awesome stickers 💥</h3>
             <div class="stickers-container">
-              <button class="sticker1">😂</button>
-              <button class="sticker2">🙃</button>
-              <button class="sticker3">😇</button>
-              <button class="sticker3">🥰</button>
-              <button class="sticker3">🤑</button>
+              <button value="😂" onclick="onAddSticker(this.value)" class="sticker1">😂</button>
+              <button value="🙃" onclick="onAddSticker(this.value)" class="sticker2">🙃</button>
+              <button value="😇" onclick="onAddSticker(this.value)" class="sticker3">😇</button>
+              <button value="🥰" onclick="onAddSticker(this.value)" class="sticker3">🥰</button>
+              <button value="🤑" onclick="onAddSticker(this.value)" class="sticker3">🤑</button>
             </div>
             <h3>Don't forget to save & share</h3>
             <ul class="share-container">
