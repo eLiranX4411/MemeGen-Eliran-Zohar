@@ -360,6 +360,11 @@
     font-size: 1.2rem;
   }
 
+  .about-links-container {
+    height: 150px;
+    width: 150px;
+  }
+
   /* Editor Section */
 
   .main-editor-content {
@@ -417,6 +422,10 @@
     text-align: center;
   }
 
+  #colorPicker {
+    cursor: pointer;
+  }
+
   .crudl button,
   .fonts-crudl button {
     height: 30px;
@@ -424,6 +433,13 @@
     border: 2px solid black;
     border-radius: 1em;
     background-color: var(--clr-primary2);
+    cursor: pointer;
+  }
+
+  .crudl button:hover,
+  .fonts-crudl button:hover {
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
   }
 
   .stickers-container {
@@ -436,6 +452,7 @@
     border: none;
     font-size: 1.4rem;
     background-color: var(--clr-primary4);
+    cursor: pointer;
   }
 
   .share-container {
