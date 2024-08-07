@@ -218,19 +218,78 @@
     width: 400px;
   }
 
-  .main-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: keepcheese, sans-serif;
-    font-size: 1.5em;
-
-    background-color: var(--clr-primary3);
-    height: 135px;
-
-    box-shadow: inset 0 2px 0 var(--clr-black);
+  .crudl button,
+  .fonts-crudl button {
+    height: 30px;
+    width: 30px;
+    border: 2px solid black;
+    border-radius: 1em;
+    background-color: var(--clr-primary2);
+    cursor: pointer;
   }
+
+  .crudl button:hover,
+  .fonts-crudl button:hover {
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
+  }
+
+  .stickers-container {
+    border: 2px solid black;
+    background-color: var(--clr-primary4);
+    border-radius: 1em;
+  }
+
+  .stickers-container button {
+    border: none;
+    font-size: 1.4rem;
+    background-color: var(--clr-primary4);
+    cursor: pointer;
+  }
+
+  .share-container {
+    font-family: keepcheese;
+  }
+
+  .share-container li:hover {
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
+  }
+}
+
+.save {
+  border: 2px solid black;
+  padding: 0.4em;
+  border-radius: 1em;
+  background-color: var(--clr-primary);
+}
+
+.download {
+  border: 2px solid black;
+  padding: 0.4em;
+  border-radius: 1em;
+  background-color: var(--clr-primary3);
+}
+
+.share {
+  border: 2px solid black;
+  padding: 0.4em;
+  border-radius: 1em;
+  background-color: var(--clr-primary);
+}
+
+.main-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: keepcheese, sans-serif;
+  font-size: 1.5em;
+
+  background-color: var(--clr-primary3);
+  height: 135px;
+
+  box-shadow: inset 0 2px 0 var(--clr-black);
 }
 
 /* ---------------------------------------Small------------------------------------- */
@@ -253,6 +312,11 @@
     grid-template-rows: 1fr 1fr;
 
     margin-block: 2em;
+  }
+
+  .canvas-board {
+    height: 500px;
+    width: 500px;
   }
 
   .keywords-bar-container {
