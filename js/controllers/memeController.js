@@ -37,7 +37,7 @@ function renderMeme() {
 
         gCtx.fillText(element.txt, element.x, element.y)
 
-        if (idx === meme.selectedLineIdx) {
+        if (idx === meme.selectedElementIdx) {
           const textMetrics = gCtx.measureText(element.txt)
           const textHeight = element.size
 

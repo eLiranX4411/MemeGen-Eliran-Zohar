@@ -1,6 +1,6 @@
 'use strict'
 
-const GALLERY_STORAGE_KEY = 'gallery'
+// const GALLERY_STORAGE_KEY = 'gallery'
 
 var gImgs = [
   { id: 1, url: 'img/1.jpg', keywords: ['funny', 'trump'] },
@@ -13,14 +13,6 @@ var gImgs = [
   { id: 8, url: 'img/8.jpg', keywords: ['dreamy', 'man with hat'] },
   { id: 9, url: 'img/9.jpg', keywords: ['funny', 'kid'] },
 ]
-
-var gKeywordPopularity = {
-  funny: 3,
-  dogs: 1.5,
-  baby: 2.5,
-  cute: 2.5,
-  cat: 1.5,
-}
 
 function getImgs(options = {}) {
   const filterBy = options.filterBy
@@ -42,7 +34,11 @@ function _filter(imgs, filterBy) {
 }
 
 function increaseKeywordPopularity(keyword) {
-  return gKeywordPopularity[keyword]++
+  return gKeywordSearchCountMap[keyword]++
+}
+
+function getKeywordPopularity(keyword) {
+  return gKeywordSearchCountMap[keyword]
 }
 
 function clearFilterBy() {
@@ -51,6 +47,6 @@ function clearFilterBy() {
   renderGallery()
 }
 
-function _galleryStorageSaving() {
-  saveToStorage(GALLERY_STORAGE_KEY, gImgs)
-}
+// function _galleryStorageSaving() {
+//   saveToStorage(GALLERY_STORAGE_KEY, gImgs)
+// }

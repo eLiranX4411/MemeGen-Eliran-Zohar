@@ -8,6 +8,7 @@ function onInit() {
   renderGallery()
   showGalleryScreen()
   closeEditorScreen()
+  initKeywords()
 }
 
 function renderGallery() {
@@ -34,11 +35,19 @@ function onClickOnKeyword(keyword) {
   increaseKeywordPopularity(keyword)
 
   const elKeyword = document.querySelector(`[data-keyword="${keyword}"]`)
-  const newFontSize = increaseKeywordPopularity(keyword)
-
+  const newFontSize = 1 + getKeywordPopularity(keyword) * 0.1
   elKeyword.style.fontSize = `${newFontSize}rem`
 
   renderGallery()
+}
+
+function initKeywords() {
+  const keywordItems = document.querySelectorAll('.keyword-item')
+  keywordItems.forEach((el) => {
+    const keyword = el.dataset.keyword
+    const newFontSize = 1 + getKeywordPopularity(keyword) * 0.1
+    el.style.fontSize = `${newFontSize}rem`
+  })
 }
 
 // -------------------------Screen Elements-----------------------------

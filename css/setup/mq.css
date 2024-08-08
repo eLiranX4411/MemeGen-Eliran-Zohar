@@ -457,6 +457,16 @@
     width: 150px;
   }
 
+  .saved-imgs {
+    display: grid;
+    column-gap: 1em;
+    row-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    margin-block: 2em;
+  }
+
   /* Editor Section */
 
   .main-editor-content {

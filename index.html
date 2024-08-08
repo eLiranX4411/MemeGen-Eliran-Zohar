@@ -13,6 +13,8 @@
         <div class="logo" onclick="onInit()"><a href="#">Memegen For Kids</a></div>
         <div class="hamburger-menu">☰</div>
         <ul class="links-container">
+          <li class="saved" onclick=""><a href="#">Saved</a></li>
+          <li class="seperator"></li>
           <li class="gallery" onclick="onInit()"><a href="#">Gallery</a></li>
           <li class="seperator"></li>
           <li class="about" onclick="showAboutScreen()"><a href="#">About</a></li>
@@ -33,10 +35,10 @@
         >
 
         <ul class="keywords-container">
-          <li class="keyword-item" data-keyword="funny" style="font-size: 3rem" onclick="onClickOnKeyword('funny')">funny</li>
+          <li class="keyword-item" data-keyword="funny" style="font-size: 1.5rem" onclick="onClickOnKeyword('funny')">funny</li>
           <li class="keyword-item" data-keyword="dogs" style="font-size: 1.5rem" onclick="onClickOnKeyword('dogs')">dogs</li>
-          <li class="keyword-item" data-keyword="baby" style="font-size: 2.5rem" onclick="onClickOnKeyword('baby')">baby</li>
-          <li class="keyword-item" data-keyword="cute" style="font-size: 2.5rem" onclick="onClickOnKeyword('cute')">cute</li>
+          <li class="keyword-item" data-keyword="baby" style="font-size: 1.5rem" onclick="onClickOnKeyword('baby')">baby</li>
+          <li class="keyword-item" data-keyword="cute" style="font-size: 1.5rem" onclick="onClickOnKeyword('cute')">cute</li>
           <li class="keyword-item" data-keyword="cat" style="font-size: 1.5rem" onclick="onClickOnKeyword('cat')">cat</li>
         </ul>
       </nav>
@@ -122,7 +124,7 @@
             </div>
             <h3>Don't forget to save & share</h3>
             <ul class="share-container">
-              <li class="save"><a href="#">Save</a></li>
+              <li class="save" onclick="saveCanvasMemeToStorage(), onInitSavedMemes()"><a href="#">Save</a></li>
               <li class="download"><a href="#" onclick="downloadImg(this)" download="my-img.jpg">Download</a></li>
               <li class="share"><a href="#">Share</a></li>
             </ul>
@@ -158,13 +160,19 @@
       </div>
     </section>
 
+    <section class="saved-container">
+      <main class="saved-imgs"></main>
+    </section>
+
     <footer class="main-footer full">&copy; Memegen For Kids - By Eliran Zohar</footer>
     <script src="js/services/utilService.js"></script>
     <script src="js/services/storageService.js"></script>
     <script src="js/services/galleryService.js"></script>
     <script src="js/services/memeService.js"></script>
+    <script src="js/services/savedService.js"></script>
 
     <script src="js/controllers/galleryController.js"></script>
     <script src="js/controllers/memeController.js"></script>
+    <script src="js/controllers/savedController.js"></script>
   </body>
 </html>

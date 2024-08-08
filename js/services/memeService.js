@@ -4,7 +4,7 @@ const MEME_STORAGE_KEY = 'memes'
 
 var gMeme = {
   selectedImgId: 1,
-  selectedLineIdx: 0,
+  selectedElementIdx: 0,
   elements: [
     {
       type: 'text',
@@ -31,17 +31,27 @@ var gMeme = {
   ],
 }
 
-var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
+var gKeywordSearchCountMap = {
+  funny: 33,
+  cute: 22,
+  baby: 12,
+  dogs: 4,
+  cat: 4,
+}
 
 function getMeme() {
   return gMeme
 }
 
 function isElementClicked(clickedPos) {
+  let linesLength = gMeme.elements.length
+  gMeme.selectedElementIdx = (gMeme.selectedElementIdx + 1) % linesLength
+
   return gMeme.elements.some((element, idx) => {
     const distance = Math.sqrt((element.x - clickedPos.x) ** 2 + (element.y - clickedPos.y) ** 2)
     if (distance <= element.size) {
       gMeme.selectedElementIdx = idx
+
       return true
     }
     return false
@@ -65,7 +75,7 @@ function setImg(imgId) {
 }
 
 function setLineTxt(txt) {
-  gMeme.elements[gMeme.selectedLineIdx].txt = txt
+  gMeme.elements[gMeme.selectedElementIdx].txt = txt
 
   _memeStorageSaving()
 }
@@ -100,13 +110,13 @@ function addSticker(sticker) {
 
 function removeLine() {
   let linesLength = gMeme.elements.length
-  gMeme.elements.splice(gMeme.selectedLineIdx, 1)
+  gMeme.elements.splice(gMeme.selectedElementIdx, 1)
 
-  if (gMeme.selectedLineIdx >= linesLength) {
-    gMeme.selectedLineIdx = linesLength - 1
+  if (gMeme.selectedElementIdx >= linesLength) {
+    gMeme.selectedElementIdx = linesLength - 1
   }
   if (linesLength === 0) {
-    gMeme.selectedLineIdx = 0
+    gMeme.selectedElementIdx = 0
   }
 
   renderMeme()
@@ -114,7 +124,7 @@ function removeLine() {
 
 function clearLines() {
   let linesLength = gMeme.elements.length
-  gMeme.elements.splice(gMeme.selectedLineIdx, linesLength - 1)
+  gMeme.elements.splice(gMeme.selectedElementIdx, linesLength - 1)
 
   renderMeme()
 }
@@ -127,37 +137,37 @@ function switchLines() {
   //   gMeme.selectedLineIdx--
   // }
   let linesLength = gMeme.elements.length
-  gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % linesLength
+  gMeme.selectedElementIdx = (gMeme.selectedElementIdx + 1) % linesLength
 
   _memeStorageSaving()
 }
 
 function setLineColor(color) {
-  gMeme.elements[gMeme.selectedLineIdx].color = color
+  gMeme.elements[gMeme.selectedElementIdx].color = color
 
   _memeStorageSaving()
 }
 
 function increaseFontSize(size = 5) {
-  gMeme.elements[gMeme.selectedLineIdx].size += size
+  gMeme.elements[gMeme.selectedElementIdx].size += size
 
   _memeStorageSaving()
 }
 
 function changeFont(font) {
-  gMeme.elements[gMeme.selectedLineIdx].font = font
+  gMeme.elements[gMeme.selectedElementIdx].font = font
 
   _memeStorageSaving()
 }
 
 function addStroke(stroke = 2) {
-  gMeme.elements[gMeme.selectedLineIdx].strokeWidth += stroke
+  gMeme.elements[gMeme.selectedElementIdx].strokeWidth += stroke
 
   _memeStorageSaving()
 }
 
 function decreaseFontSize(size = 5) {
-  gMeme.elements[gMeme.selectedLineIdx].size -= size
+  gMeme.elements[gMeme.selectedElementIdx].size -= size
 
   _memeStorageSaving()
 }
