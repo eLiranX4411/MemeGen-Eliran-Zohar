@@ -8,6 +8,7 @@ function onInit() {
   renderGallery()
   showGalleryScreen()
   closeEditorScreen()
+  closeSavedScreen()
   initKeywords()
 }
 
@@ -59,8 +60,14 @@ function showGalleryScreen() {
     .gallery-container.about-container`)
   const elKeyBar = document.querySelector('.keywords-bar-container')
 
+  const elSavedContainer = document.querySelector('.saved-container')
+  const elSavedImgsContainer = document.querySelector('.saved-imgs')
+
   elGallery.classList.add('dsp-grid')
   elAbout.classList.add('dsp-none')
+
+  elSavedContainer.classList.add('dsp-none')
+  elSavedImgsContainer.classList.add('dsp-none')
 
   elAboutKids.classList.add('dsp-grid')
   elKeyBar.style.display = 'flex'
@@ -68,12 +75,22 @@ function showGalleryScreen() {
 
 function showEditorScreen() {
   const elGallery = document.querySelector('.gallery-container')
+  const elSavedContainer = document.querySelector('.saved-container')
+  const elKeyBar = document.querySelector('.keywords-bar-container')
+  const elSavedImgsContainer = document.querySelector('.saved-imgs')
+
   elGallery.classList.add(`dsp-none`)
   elGallery.classList.remove(`dsp-grid`)
+
+  elSavedContainer.classList.add('dsp-none')
 
   const elEditor = document.querySelector('.editor-container')
   elEditor.classList.remove(`dsp-none`)
   elEditor.classList.add(`dsp-grid`)
+
+  elSavedImgsContainer.classList.add('dsp-none')
+
+  elKeyBar.style.display = 'none'
 }
 
 function closeEditorScreen() {
@@ -89,8 +106,15 @@ function showAboutScreen() {
   const elKeyBar = document.querySelector('.keywords-bar-container')
   const elEditor = document.querySelector('.editor-container')
 
+  const elSavedContainer = document.querySelector('.saved-container')
+  const elSavedImgsContainer = document.querySelector('.saved-imgs')
+
   elAbout.classList.remove('dsp-none')
 
+  elSavedContainer.classList.add('dsp-none')
+  elSavedImgsContainer.classList.add('dsp-none')
+
+  elEditor.classList.remove(`dsp-grid`)
   elEditor.classList.add(`dsp-none`)
   elEditor.classList.remove(`dsp-grid`)
 
@@ -100,7 +124,35 @@ function showAboutScreen() {
   elKeyBar.style.display = 'none'
 }
 
-function showSavedScreen() {}
+function showSavedScreen() {
+  const elSavedContainer = document.querySelector('.saved-container')
+  elSavedContainer.classList.add('dsp-grid')
+  const elAbout = document.querySelector('.about-main-container')
+
+  const elGallery = document.querySelector(`.gallery-container,
+.gallery-container.about-container`)
+  const elKeyBar = document.querySelector('.keywords-bar-container')
+  const elEditor = document.querySelector('.editor-container')
+
+  elEditor.classList.add(`dsp-none`)
+  elEditor.classList.remove(`dsp-grid`)
+
+  elAbout.classList.add('dsp-none')
+
+  elGallery.classList.add('dsp-none')
+  elGallery.classList.remove('dsp-grid')
+
+  elKeyBar.style.display = 'none'
+}
+
+function closeSavedScreen() {
+  const elSavedContainer = document.querySelector('.saved-container')
+  const elSavedImgsContainer = document.querySelector('.saved-imgs')
+
+  elSavedContainer.classList.remove(`dsp-grid`)
+  elSavedContainer.classList.add(`dsp-none`)
+  elSavedImgsContainer.classList.add(`dsp-none`)
+}
 
 // -------------------------Hamburger Menu-----------------------------
 

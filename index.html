@@ -13,7 +13,7 @@
         <div class="logo" onclick="onInit()"><a href="#">Memegen For Kids</a></div>
         <div class="hamburger-menu">☰</div>
         <ul class="links-container">
-          <li class="saved" onclick=""><a href="#">Saved</a></li>
+          <li class="saved" onclick="showSavedScreen()"><a href="#">Saved</a></li>
           <li class="seperator"></li>
           <li class="gallery" onclick="onInit()"><a href="#">Gallery</a></li>
           <li class="seperator"></li>
@@ -126,7 +126,7 @@
             <ul class="share-container">
               <li class="save" onclick="saveCanvasMemeToStorage(), onInitSavedMemes()"><a href="#">Save</a></li>
               <li class="download"><a href="#" onclick="downloadImg(this)" download="my-img.jpg">Download</a></li>
-              <li class="share"><a href="#">Share</a></li>
+              <li class="share"><a href="#" onclick="onUploadImg()">Share</a></li>
             </ul>
           </section>
         </div>

@@ -1,4 +1,9 @@
 @font-face {
+  font-family: comictans;
+  src: url('../../fonts/comictans/comictans.ttf');
+}
+
+@font-face {
   font-family: heycomic;
   src: url('../../fonts/heycomic/heycomic.ttf');
 }
@@ -6,10 +11,4 @@
 @font-face {
   font-family: keepcheese;
   src: url('../../fonts/keepcheese/keepcheese.ttf');
-}
-
-@font-face {
-  font-family: comictans;
-  src: url('../../fonts/comictans/comictans.ttf');
-  /* src: url(/fonts/comictans/comictans.ttf) format('truetype'); */
 }

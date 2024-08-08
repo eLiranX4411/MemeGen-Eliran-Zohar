@@ -29,4 +29,5 @@
 .clear-keyword {
   cursor: pointer;
   font-size: 1.6rem;
+  min-width: 200px;
 }
