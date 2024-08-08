@@ -1,8 +1,7 @@
 'use strict'
 
 //TODO:
-// Share facebook, Saved format, Text eliran about, filterby, category
-// Links linkdin git and facebook, More responsivy & missions
+// Share facebook, Saved format
 
 var gCtx
 var gElCanvas

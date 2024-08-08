@@ -2,7 +2,6 @@
 
 const gQueryOptions = {
   filterBy: { keyword: '' },
-  sortBy: {},
 }
 
 function onInit() {
@@ -26,6 +25,22 @@ function onImgSelect(imgId) {
   renderMeme()
 }
 
+function onSetFilterBy(keyword) {
+  gQueryOptions.filterBy.keyword = keyword
+  renderGallery()
+}
+
+function onClickOnKeyword(keyword) {
+  increaseKeywordPopularity(keyword)
+
+  const elKeyword = document.querySelector(`[data-keyword="${keyword}"]`)
+  const newFontSize = increaseKeywordPopularity(keyword)
+
+  elKeyword.style.fontSize = `${newFontSize}rem`
+
+  renderGallery()
+}
+
 // -------------------------Screen Elements-----------------------------
 
 function showGalleryScreen() {
@@ -39,7 +54,7 @@ function showGalleryScreen() {
   elAbout.classList.add('dsp-none')
 
   elAboutKids.classList.add('dsp-grid')
-  elKeyBar.classList.add('dsp-flex')
+  elKeyBar.style.display = 'flex'
 }
 
 function showEditorScreen() {
@@ -73,10 +88,7 @@ function showAboutScreen() {
   elAboutKids.classList.add('dsp-none')
   elAboutKids.classList.remove('dsp-grid')
 
-  elKeyBar.classList.add('dsp-none')
-  elKeyBar.classList.remove('dsp-flex')
-
-  console.log(elKeyBar)
+  elKeyBar.style.display = 'none'
 }
 
 // -------------------------Hamburger Menu-----------------------------

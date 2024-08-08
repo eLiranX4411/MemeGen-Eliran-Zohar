@@ -336,13 +336,15 @@
   }
 
   .keywords-bar-container {
-    background-color: var(--clr-primary2);
-    min-height: 100px;
-    font-family: comictans, serif;
-    font-size: 1.2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background-color: var(--clr-primary2);
+    min-height: 100px;
+
+    font-family: comictans, serif;
+    font-size: 1.2em;
   }
 
   /* Editor Section */
@@ -405,14 +407,15 @@
   }
 
   .keywords-bar-container {
-    background-color: var(--clr-primary2);
-    min-height: 100px;
-    font-family: comictans, serif;
-
-    font-size: 1.2em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background-color: var(--clr-primary2);
+    min-height: 100px;
+
+    font-family: comictans, serif;
+    font-size: 1.2em;
   }
 
   /* Gallery Section */
@@ -546,6 +549,11 @@
 
   .share-container {
     font-family: keepcheese;
+  }
+
+  .share-container li:hover {
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
   }
 
   .save {

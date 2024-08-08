@@ -20,13 +20,24 @@
       </nav>
 
       <nav class="keywords-bar-container" id="keybar">
-        <label for="keywordSearch"><input type="text" placeholder="Enter search keyword" id="keywordSearch" name="keywordSearch" /> 🔍</label>
+        <label for="keywordSearch">
+          <input list="keywords" onchange="onSetFilterBy(this.value)" placeholder="Choose Keyword" id="keywordSearch" name="keywordSearch" />
+          <datalist id="keywords">
+            <option value="funny"></option>
+            <option value="dogs"></option>
+            <option value="baby"></option>
+            <option value="cute"></option>
+            <option value="cat"></option>
+          </datalist>
+          🔍 <span class="clear-keyword" onclick="clearFilterBy()"> Clear</span></label
+        >
+
         <ul class="keywords-container">
-          <li><a href="#">Funny</a></li>
-          <li><a href="#">Drinks</a></li>
-          <li><a href="#">Dogs</a></li>
-          <li><a href="#">Books</a></li>
-          <li><a href="#">Comics</a></li>
+          <li class="keyword-item" data-keyword="funny" style="font-size: 3rem" onclick="onClickOnKeyword('funny')">funny</li>
+          <li class="keyword-item" data-keyword="dogs" style="font-size: 1.5rem" onclick="onClickOnKeyword('dogs')">dogs</li>
+          <li class="keyword-item" data-keyword="baby" style="font-size: 2.5rem" onclick="onClickOnKeyword('baby')">baby</li>
+          <li class="keyword-item" data-keyword="cute" style="font-size: 2.5rem" onclick="onClickOnKeyword('cute')">cute</li>
+          <li class="keyword-item" data-keyword="cat" style="font-size: 1.5rem" onclick="onClickOnKeyword('cat')">cat</li>
         </ul>
       </nav>
     </header>
@@ -125,23 +136,12 @@
         <img class="kids-img" src="img/eliran.jpg" alt="" srcset="" />
         <div class="text-container">
           <div class="title-container">
-            <h2 class="kids-title">Memegen for kids By Eliran Zohar</h2>
-            <h3 class="kids-title">Discover the Fun of Meme Generation!</h3>
+            <h2 class="kids-title">Memegen for kids</h2>
             <p class="kids-txt">
-              Kids love to play with meme generators online because it combines creativity with humor in a way that's both entertaining and educational. Our
-              meme generator allows children to create their own hilarious memes, sparking their imagination and giving them a platform to express their unique
-              sense of humor.
+              Memegen for Kids is a creative and playful web app designed by Eliran Zohar to offer children a safe space to explore their imagination through
+              meme creation. Our platform is built with kids' safety in mind, ensuring a fun experience while protecting them from inappropriate content.
             </p>
-            <p class="kids-txt">
-              Creating memes isn't just about getting laughs, it also helps kids develop valuable skills. As they think of funny captions and match them with
-              images, they’re enhancing their creative writing and critical thinking abilities.
-            </p>
-
-            <p class="kids-txt">
-              Moreover, sharing these memes with friends can boost their social skills and confidence. Our meme generator is user-friendly and designed to be
-              safe for all ages, making it the perfect place for kids to explore and enjoy. They can choose from a wide variety of images and add their own
-              captions to create memes that will make everyone laugh. So, why wait? Dive into the world of meme generation and watch your creativity soar!
-            </p>
+            <p class="kids-txt">Memegen for Kids empowers young minds to express themselves creatively in a secure and entertaining environment.</p>
           </div>
           <ul class="about-links-container">
             <li class="linkdin">
@@ -161,6 +161,7 @@
     <footer class="main-footer full">&copy; Memegen For Kids - By Eliran Zohar</footer>
     <script src="js/services/utilService.js"></script>
     <script src="js/services/storageService.js"></script>
+    <script src="js/services/galleryService.js"></script>
     <script src="js/services/memeService.js"></script>
 
     <script src="js/controllers/galleryController.js"></script>
