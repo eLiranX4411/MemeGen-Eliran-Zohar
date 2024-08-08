@@ -1,14 +1,15 @@
 @font-face {
   font-family: heycomic;
-  src: url(/fonts/heycomic/heycomic.ttf) format('truetype');
+  src: url(../../fonts/heycomic/heycomic.ttf) format('truetype');
 }
 
 @font-face {
   font-family: keepcheese;
-  src: url(/fonts/keepcheese/keepcheese.ttf) format('truetype');
+  src: url(../../fonts/keepcheese/keepcheese.ttf) format('truetype');
 }
 
 @font-face {
   font-family: comictans;
-  src: url(/fonts/comictans/comictans.ttf) format('truetype');
+  src: url(../../fonts/comictans/comictans.ttf) format('truetype');
+  /* src: url(/fonts/comictans/comictans.ttf) format('truetype'); */
 }

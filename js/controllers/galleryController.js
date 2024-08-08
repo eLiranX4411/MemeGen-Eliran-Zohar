@@ -100,6 +100,8 @@ function showAboutScreen() {
   elKeyBar.style.display = 'none'
 }
 
+function showSavedScreen() {}
+
 // -------------------------Hamburger Menu-----------------------------
 
 document.addEventListener('DOMContentLoaded', () => {
