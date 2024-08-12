@@ -124,10 +124,13 @@
             </div>
             <h3>Don't forget to save & share</h3>
             <ul class="share-container">
-              <li class="save" onclick="saveCanvasMemeToStorage(), onInitSavedMemes()"><a href="#">Save</a></li>
+              <li class="save" onclick="saveCanvasMemeToStorage(), onInitSavedMemes(), onSaveClick()"><a href="#">Save</a></li>
               <li class="download"><a href="#" onclick="downloadImg(this)" download="my-img.jpg">Download</a></li>
               <li class="share"><a href="#" onclick="onUploadImg()">Share</a></li>
             </ul>
+            <div class="save-msg-container">
+              <h3 class="save-msg"></h3>
+            </div>
           </section>
         </div>
       </main>

@@ -506,6 +506,17 @@
     margin-block: 2em;
   }
 
+  .save-msg-container {
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+  }
+
+  .save-msg {
+    justify-content: center;
+    align-items: center;
+  }
+
   /* Editor Section */
 
   .main-editor-content {

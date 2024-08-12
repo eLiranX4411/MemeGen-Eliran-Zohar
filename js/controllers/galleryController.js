@@ -15,7 +15,7 @@ function onInit() {
 function renderGallery() {
   var elImgs = document.querySelector('.imgs-container')
   var strHtml = getImgs(gQueryOptions)
-    .map((img) => `<img src="${img.url}" alt="404" onclick="onImgSelect(${img.id})" />`)
+    .map(({ url, id }) => `<img src="${url}" alt="404" onclick="onImgSelect(${id})" />`)
     .join('')
 
   elImgs.innerHTML = strHtml

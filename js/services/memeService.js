@@ -99,7 +99,7 @@ function addLine() {
 function addSticker(sticker) {
   gMeme.elements.push({
     type: 'sticker',
-    sticker: sticker,
+    sticker,
     size: 40,
     x: 250,
     y: getRandomInt(100, 500),
@@ -131,12 +131,6 @@ function clearLines() {
 }
 
 function switchLines() {
-  // let linesLength = gMeme.lines.length - 1
-  // if (gMeme.selectedLineIdx < linesLength) {
-  //   gMeme.selectedLineIdx++
-  // } else {
-  //   gMeme.selectedLineIdx--
-  // }
   let linesLength = gMeme.elements.length
   gMeme.selectedElementIdx = (gMeme.selectedElementIdx + 1) % linesLength
 
