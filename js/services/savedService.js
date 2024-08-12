@@ -3,11 +3,9 @@
 function saveCanvasMemeToStorage() {
   const imgData = gElCanvas.toDataURL('image/png')
 
-  let savedMemes = loadFromStorage(MEME_STORAGE_KEY)
-
-  if (!Array.isArray(savedMemes)) {
-    savedMemes = []
-  }
+  console.log(loadFromStorage(SAVE_MEME_STORAGE_KEY))
+  let savedMemes = loadFromStorage(SAVE_MEME_STORAGE_KEY) || []
+  console.log(savedMemes)
 
   const memeToSave = {
     imgData: imgData,
@@ -16,5 +14,5 @@ function saveCanvasMemeToStorage() {
 
   savedMemes.push(memeToSave)
 
-  saveToStorage(MEME_STORAGE_KEY, savedMemes)
+  saveToStorage(SAVE_MEME_STORAGE_KEY, savedMemes)
 }

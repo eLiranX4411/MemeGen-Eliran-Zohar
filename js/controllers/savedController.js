@@ -5,7 +5,7 @@ function onInitSavedMemes() {
 }
 
 function renderSavedMemes() {
-  const savedMemes = loadFromStorage(MEME_STORAGE_KEY) || []
+  const savedMemes = loadFromStorage(SAVE_MEME_STORAGE_KEY) || []
   const elSavedImgsContainer = document.querySelector('.saved-imgs')
 
   const imgsHtml = savedMemes

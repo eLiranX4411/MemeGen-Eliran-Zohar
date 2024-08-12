@@ -394,10 +394,6 @@
     height: 100vh;
   }
 
-  /* .about-main-container .kids-img {
-    min-width: 600px;
-  } */
-
   .dsp-grid {
     display: grid;
   }
@@ -457,6 +453,15 @@
     margin-block: 2em;
   }
 
+  .imgs-container > img {
+    border-radius: 1em;
+  }
+
+  .imgs-container > img:hover {
+    animation: pulse; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
+  }
+
   .about-container {
     display: grid;
     padding: 3em;
@@ -482,6 +487,11 @@
   .about-links-container {
     height: 150px;
     width: 150px;
+  }
+
+  .about-main-container {
+    min-height: 100%;
+    background-color: var(--clr-primary2);
   }
 
   /* Saved Section  */

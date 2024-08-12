@@ -1,6 +1,7 @@
 'use strict'
 
 const MEME_STORAGE_KEY = 'memes'
+const SAVE_MEME_STORAGE_KEY = 'saveMemesDB'
 
 var gMeme = {
   selectedImgId: 1,

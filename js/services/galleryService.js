@@ -22,8 +22,8 @@ function getImgs(options = {}) {
   return imgs
 }
 
-function getImgById(id) {
-  return gImgs.find((img) => img.id === id)
+function getImgById(imgId) {
+  return gImgs.find(({ id }) => id === imgId)
 }
 
 function _filter(imgs, filterBy) {
